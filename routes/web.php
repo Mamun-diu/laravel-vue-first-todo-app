@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\InfoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('user', [InfoController::class, 'index']);
+Route::get('user', [InfoController::class, 'index']);
+Route::post('user',[InfoController::class, 'store']);
+Route::post('user/{id}',[InfoController::class, 'update']);
+Route::delete('user/{id}',[InfoController::class, 'destroy']);
